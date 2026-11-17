@@ -16,7 +16,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
-            - name: Build debug APK
+     - name: Build debug APK
         run: |
           gradle assembleDebug --console=plain > build.log 2>&1 || { grep -B2 -A12 -E "What went wrong|^e: |error:" build.log | head -60; exit 1; }
         env:
